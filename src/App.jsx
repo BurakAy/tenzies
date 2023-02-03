@@ -1,5 +1,6 @@
 import "./App.css";
 import Heading from "./components/Heading";
+import GameStats from "./components/GameStats";
 import Dice from "./components/Dice";
 import RollButton from "./components/RollButton";
 import Footer from "./components/Footer";
@@ -10,13 +11,21 @@ import Confetti from "react-confetti";
 function App() {
   const [dice, setDice] = useState(loadDice());
   const [tenzies, setTenzies] = useState(false);
+  const [rolls, setRolls] = useState(0);
+  const [bestGame, setBestGame] = useState(localStorage.getItem("bestGame"));
 
   useEffect(() => {
     const won = dice.every(
       (die) => die.rollNum === dice[0].rollNum && die.freezeNum
     );
 
-    won ? setTenzies(true) : "";
+    if (won) {
+      setTenzies(true);
+      if (rolls < bestGame || bestGame == 0) {
+        setBestGame(rolls);
+        localStorage.setItem("bestGame", rolls);
+      }
+    }
   }, [dice]);
 
   function loadDice() {
@@ -41,6 +50,8 @@ function App() {
         }
       });
     });
+
+    setRolls((prevRoll) => (prevRoll += 1));
   };
 
   const freezeDie = (dieId) => {
@@ -58,12 +69,14 @@ function App() {
   const resetGame = () => {
     setDice(loadDice());
     setTenzies(false);
+    setRolls(0);
   };
 
   return (
     <main className="App">
       {tenzies && <Confetti className="confetti" />}
       <Heading />
+      <GameStats diceRolls={rolls} lowestRolls={bestGame} />
       <Dice handleFreeze={freezeDie} dice={dice} />
       <RollButton
         handleClick={rollDice}

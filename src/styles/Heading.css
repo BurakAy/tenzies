@@ -1,0 +1,23 @@
+.heading--container {
+    text-align: center;
+    max-width: 220px;
+    margin-bottom: 20px;
+}
+
+.heading--container h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 30px;
+    letter-spacing: -0.03em;
+    color: #2B283A;
+}
+
+.heading--container p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 0.82rem;
+    line-height: 16px;
+    letter-spacing: -0.03em;
+    color: #4A4E74;
+}

@@ -1,0 +1,17 @@
+.button--container {
+    margin-top: 25px;
+}
+
+.button--roll {
+    width: 92px;
+    height: 36px;
+    background: #5035FF;
+    box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+    border-radius: 3.81277px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 19px;
+    color: #FFFFFF;
+    cursor: pointer;
+}

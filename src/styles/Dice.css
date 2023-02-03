@@ -1,0 +1,26 @@
+.dice--container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.dice--die_wrapper {
+    width: 36px;
+    height: 36px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 3.81277px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 24px;
+    text-align: center;
+    color: #2B283A;
+    cursor: pointer;
+}
+
+.dice--die_wrapper p {
+    margin: 0;
+}

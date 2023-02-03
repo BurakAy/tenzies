@@ -12,7 +12,7 @@ function App() {
   const [dice, setDice] = useState(loadDice());
   const [tenzies, setTenzies] = useState(false);
   const [rolls, setRolls] = useState(0);
-  const [bestGame, setBestGame] = useState(localStorage.getItem("bestGame"));
+  const [bestGame, setBestGame] = useState(loadGameData());
 
   useEffect(() => {
     const won = dice.every(
@@ -38,6 +38,12 @@ function App() {
       });
     }
     return diceVals;
+  }
+
+  function loadGameData() {
+    return localStorage.getItem("bestGame")
+      ? localStorage.getItem("bestGame")
+      : localStorage.setItem("bestGame", 0);
   }
 
   const rollDice = () => {

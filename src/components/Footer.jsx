@@ -3,7 +3,12 @@ import "../styles/Footer.css";
 const Footer = () => {
   return (
     <div className="footer--container">
-      <p>Burak Development &copy; 2023</p>
+      <p>
+        <a href="https://burakaydemir.com" target="_blank">
+          Burak Development
+        </a>{" "}
+        &copy; 2023
+      </p>
     </div>
   );
 };

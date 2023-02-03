@@ -2,6 +2,7 @@ import "./App.css";
 import Heading from "./components/Heading";
 import Dice from "./components/Dice";
 import RollButton from "./components/RollButton";
+import Footer from "./components/Footer";
 import gameDice from "./gameDice";
 import { useState } from "react";
 
@@ -37,6 +38,7 @@ function App() {
       <Heading />
       <Dice handleFreeze={freezeDie} dice={dice} />
       <RollButton handleClick={rollDice} />
+      <Footer />
     </main>
   );
 }

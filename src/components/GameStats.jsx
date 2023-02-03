@@ -5,7 +5,7 @@ const GameStats = (props) => {
     <div className="gamestats--container">
       <div className="gamestats--wrapper">
         <p className="gamestats-best_game">
-          Best Game: {props.lowestRolls ? props.lowestRolls : 0}
+          Best Game: {props.lowestRolls ? props.lowestRolls : "0"}
         </p>
         <p className="gamestats--rolls">Rolls: {props.diceRolls}</p>
       </div>

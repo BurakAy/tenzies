@@ -5,6 +5,7 @@ import RollButton from "./components/RollButton";
 import Footer from "./components/Footer";
 import gameDice from "./gameDice";
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
 function App() {
   const [dice, setDice] = useState(loadDice());
@@ -13,13 +14,25 @@ function App() {
     const diceVals = [];
     for (let x = 0; x < 10; x++) {
       diceVals.push({
-        id: x,
+        id: nanoid(),
         rollNum: Math.ceil(Math.random() * 6),
         freezeNum: false,
       });
     }
     return diceVals;
   }
+
+  const rollDice = () => {
+    setDice((prevVals) => {
+      return prevVals.map((dieVals) => {
+        if (!dieVals.freezeNum) {
+          return { ...dieVals, rollNum: Math.ceil(Math.random() * 6) };
+        } else {
+          return dieVals;
+        }
+      });
+    });
+  };
 
   const freezeDie = (dieId) => {
     setDice((prevVals) => {
@@ -37,7 +50,7 @@ function App() {
 
   const checkWinner = () => {
     let matching = 1;
-    dice.map((die, i) => {
+    dice.map((die) => {
       if (matching < 10 && die.rollNum === dice[0].rollNum && die.freezeNum) {
         matching++;
       }
@@ -56,18 +69,7 @@ function App() {
         });
       }
     });
-  };
-
-  const rollDice = () => {
-    setDice((prevVals) => {
-      return prevVals.map((dieVals) => {
-        if (!dieVals.freezeNum) {
-          return { ...dieVals, rollNum: Math.ceil(Math.random() * 6) };
-        } else {
-          return dieVals;
-        }
-      });
-    });
+    console.log(matching);
   };
 
   return (

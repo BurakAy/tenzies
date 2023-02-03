@@ -7,7 +7,7 @@ const RollButton = (props) => {
         className="button--roll"
         onClick={props.won ? props.handleReset : props.handleClick}
       >
-        {props.won ? "Reset" : "Roll"}
+        {props.won ? "New Game" : "Roll"}
       </button>
     </div>
   );

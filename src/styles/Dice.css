@@ -21,6 +21,10 @@
     cursor: pointer;
 }
 
+.dice--die_wrapper:hover {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.274);
+}
+
 .dice--die_wrapper p {
     margin: 0;
 }

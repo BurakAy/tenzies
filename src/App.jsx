@@ -7,7 +7,19 @@ import gameDice from "./gameDice";
 import { useState } from "react";
 
 function App() {
-  const [dice, setDice] = useState(gameDice);
+  const [dice, setDice] = useState(loadDice());
+
+  function loadDice() {
+    const diceVals = [];
+    for (let x = 0; x < 10; x++) {
+      diceVals.push({
+        id: x,
+        rollNum: Math.ceil(Math.random() * 6),
+        freezeNum: false,
+      });
+    }
+    return diceVals;
+  }
 
   const freezeDie = (dieId) => {
     setDice((prevVals) => {

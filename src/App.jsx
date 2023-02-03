@@ -37,13 +37,25 @@ function App() {
 
   const checkWinner = () => {
     let matching = 1;
-    dice.map((die) => {
-      if (die.rollNum == dice[0].rollNum && die.freezeNum) {
-        matching += 1;
+    dice.map((die, i) => {
+      if (matching < 10 && die.rollNum === dice[0].rollNum && die.freezeNum) {
+        matching++;
+      }
+      if (matching == 10) {
+        console.log("WINNER!");
+        matching = 1;
+
+        setDice((prevVals) => {
+          return prevVals.map((dieVals) => {
+            return {
+              ...dieVals,
+              rollNum: Math.ceil(Math.random() * 6),
+              freezeNum: false,
+            };
+          });
+        });
       }
     });
-
-    matching == 10 ? console.log("WINNER") : "";
   };
 
   const rollDice = () => {

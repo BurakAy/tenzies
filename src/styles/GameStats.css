@@ -1,0 +1,22 @@
+.gamestats--container {
+    margin-bottom: 12px;
+    width: 255px;
+    text-align: center;
+}
+
+.gamestats--wrapper {
+    padding: 4px 0;
+    border-top: 1px solid #4A4E74;
+    border-bottom: 1px solid #4A4E74;
+    display: flex;
+    justify-content: space-around;
+}
+
+.gamestats--wrapper p {
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.7rem;
+    line-height: 16px;
+    letter-spacing: -0.03em;
+    color: #2B283A;
+}

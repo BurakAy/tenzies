@@ -3,7 +3,6 @@ import Heading from "./components/Heading";
 import Dice from "./components/Dice";
 import RollButton from "./components/RollButton";
 import Footer from "./components/Footer";
-import gameDice from "./gameDice";
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import Confetti from "react-confetti";

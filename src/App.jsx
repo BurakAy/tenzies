@@ -31,6 +31,19 @@ function App() {
         }
       });
     });
+
+    checkWinner();
+  };
+
+  const checkWinner = () => {
+    let matching = 1;
+    dice.map((die) => {
+      if (die.rollNum == dice[0].rollNum && die.freezeNum) {
+        matching += 1;
+      }
+    });
+
+    matching == 10 ? console.log("WINNER") : "";
   };
 
   const rollDice = () => {

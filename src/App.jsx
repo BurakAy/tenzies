@@ -23,7 +23,7 @@ function App() {
       setTenzies(true);
       if (rolls < bestGame || bestGame === "0") {
         setBestGame(rolls);
-        localStorage.setItem("bestGame", rolls);
+        localStorage.setItem("bestGame", rolls.toString());
       }
     }
   }, [dice]);

@@ -1,4 +1,4 @@
-# tenzies
+# tenzies game
 
 ## Play It
 https://spiffy-taiyaki-90157d.netlify.app/

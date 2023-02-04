@@ -21,9 +21,9 @@ function App() {
 
     if (won) {
       setTenzies(true);
-      if (rolls < bestGame || bestGame === "0") {
+      if (rolls < bestGame || bestGame == 0) {
         setBestGame(rolls);
-        localStorage.setItem("bestGame", rolls.toString());
+        localStorage.setItem("bestGame", rolls);
       }
     }
   }, [dice]);
@@ -43,7 +43,7 @@ function App() {
   function loadGameData() {
     return localStorage.getItem("bestGame")
       ? localStorage.getItem("bestGame")
-      : localStorage.setItem("bestGame", "0");
+      : localStorage.setItem("bestGame", 0);
   }
 
   const rollDice = () => {
